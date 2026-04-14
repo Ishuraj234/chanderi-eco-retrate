@@ -1,0 +1,51 @@
+# Chanderi Eco Retreat - Architectural Summary
+
+## Table of Contents
+1. Core Repository Structure
+2. Backend (Node + Express + MongoDB)
+3. Frontend (React + Vite + Tailwind)
+4. Data Workflows
+
+---
+
+## 1. Core Repository Structure
+
+This repository acts as a fully cohesive web platform explicitly segregating backend and frontend architecture across nested folders. Run simultaneously, these instances act as a unified client/server solution using `VITE_API_URL` reverse-proxy protocols over Port 5000.
+
+`backend/` - Node.JS/Express Database routing environment.
+`frontend/` - ReactJS UI environment mapped heavily with Tailwind.
+
+---
+
+## 2. Backend (Node + Express + MongoDB)
+
+The `backend` securely attaches a standard Express setup connecting against MongoDB leveraging native `mongoose` ORM mappings. 
+
+* **`server.js`**: Core entry-point loading `.env` configurations and booting routes actively across `/api`.
+* **`models/`**: Defines our MongoDB data tables natively:
+   * `Booking.js`: Defines checking timestamps, total pricing functions, `extraFeatures` mapping arrays, and user hooks.
+   * `Contact.js`: Stores customer "Contact" module questions for admin dash parsing.
+   * `User.js`: Employs robust schema encryption mappings via `bcrypt` hooks scaling 2 separate levels: `admin` and standard `user`.
+* **`routes/` & `controllers/`**: Abstracts native logic for CRUD functionality parsing headers against API scopes. 
+    * E.G: `authRoutes.js` delegates JSON Web Tokens based entirely off of incoming `roles`.
+
+---
+
+## 3. Frontend (React + Vite + Tailwind)
+
+The `frontend` defines a visually rich interactive application structured in component trees using standard React properties alongside `react-router-dom` module pathways. 
+
+* **`src/App.jsx`**: Global entry routing configuration parsing URL nodes strictly into module views (`/<Home>`, `/login`, `/admin/login`).
+* **`src/components/`**: Houses native reusable modules seamlessly dropped across view nodes (Navbar, Footer, ContactForms).
+* **`src/pages/`**: Massive interactive containers fetching and distributing specific context. E.G `AdminPage.jsx` houses the full statistical module strictly protected to `admin` token validations locally verified off Storage APIs.
+* **`src/services/api.js`**: The overarching bridge parsing Axios async behaviors. This ensures all REST API hits explicitly link against `http://localhost:5000` mapping backend logic elegantly over.
+
+---
+
+## 4. Data Workflows
+
+### Authentication
+JWT tokens are universally handed via the auth layer. Local React nodes evaluate identity explicitly through Native localStorage strings matching `response.token`. Any API fetch inherently attaches this Bearer token enforcing standard authorization boundaries seamlessly. 
+
+### Transactions (Booking & Contacting)
+Normal logic submits forms (`BookingForm.jsx`) which natively bundle objects checking validations prior to dispatch. When passed to the Backend, Mongoose verifies internal restrictions cleanly and calculates real-time math natively via `pre('save')` hooks before persisting logic out against the dashboard.
