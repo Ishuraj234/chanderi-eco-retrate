@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { 
-  Facebook, Instagram, Twitter, Youtube, 
-  Mail, Phone, MapPin, Heart, 
-  Send, ChevronRight
-} from 'lucide-react'
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { Mail, Phone, MapPin, Heart, Send, ChevronRight } from 'lucide-react'
 import { contactApi } from '../services/api'
 import toast from 'react-hot-toast'
 
@@ -35,10 +32,10 @@ const Footer = () => {
   ]
 
   const socialLinks = [
-    { icon: <Facebook size={20} />, name: 'Facebook', url: 'https://facebook.com' },
-    { icon: <Instagram size={20} />, name: 'Instagram', url: 'https://instagram.com' },
-    { icon: <Twitter size={20} />, name: 'Twitter', url: 'https://twitter.com' },
-    { icon: <Youtube size={20} />, name: 'YouTube', url: 'https://youtube.com' },
+    { icon: <FaFacebook size={20} />, name: 'Facebook', url: 'https://facebook.com' },
+    { icon: <FaInstagram size={20} />, name: 'Instagram', url: 'https://instagram.com' },
+    { icon: <FaTwitter size={20} />, name: 'Twitter', url: 'https://twitter.com' },
+    { icon: <FaYoutube size={20} />, name: 'YouTube', url: 'https://youtube.com' },
   ]
 
   const handleNewsletterSubmit = async (e) => {
