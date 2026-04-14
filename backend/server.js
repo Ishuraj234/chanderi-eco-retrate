@@ -17,8 +17,14 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:5173', 'https://chanderi-eco-retrate.onrender.com', 'https://chanderi-eco-retrate-1.onrender.com/', 'https://eco-resort.netlify.app/'],
-    credentials: true
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:5173',
+    'https://chanderi-eco-retrate.onrender.com',
+    'https://chanderi-eco-retrate-1.onrender.com',
+    'https://eco-resort.netlify.app'
+  ],
+  credentials: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
