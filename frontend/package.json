@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "preinstall": "npx npm-check-updates -u"
+    "preview": "vite preview"
   },
   "dependencies": {
     "axios": "^1.15.0",
@@ -30,7 +29,7 @@
     "@vitejs/plugin-react": "^6.0.1",
     "autoprefixer": "^10.5.0",
     "postcss": "^8.5.9",
-    "tailwindcss": "^4.2.2",
+    "tailwindcss": "3.4.17",
     "vite": "^8.0.8"
   },
   "browserslist": {
