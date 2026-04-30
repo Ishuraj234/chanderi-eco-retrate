@@ -217,7 +217,7 @@ const Footer = () => {
               in Chanderi, Madhya Pradesh
             </p>
             <p className="text-gray-600 text-xs mt-2">
-              GST No: 23ABCDE1234F1Z5 • Tourism License: MP/TOUR/2024/12345
+              GST No: 23ABCDE1234F1Z5 • Tourism License: MP/TOUR/2026/12345
             </p>
           </div>
         </div>
